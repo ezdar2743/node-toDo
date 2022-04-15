@@ -1,4 +1,7 @@
 const taskDom = document.querySelector(".tasks");
+const formDom = document.querySelector(".task-form");
+const inputDom = document.querySelector(".task-input");
+
 const showTasks = async () => {
   try {
     const { data } = await axios.get("/api/v1/tasks");
@@ -21,11 +24,23 @@ const showTasks = async () => {
       </div>
     </div>`;
       })
-      .join();
+      .join("");
     taskDom.innerHTML = allTasks;
   } catch (err) {
     console.log(err);
   }
 };
 
+formDom.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const todo = inputDom.value;
+
+  try {
+    await axios.post("/api/v1/tasks", { name: todo });
+    showTasks();
+    inputDom.value = "";
+  } catch (err) {
+    console.log(err);
+  }
+});
 showTasks();
