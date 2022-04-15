@@ -3,10 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/b38dfe7807.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
-    <div>Hellow</div>
+    <form class="task-form">
+      <h3>Todo</h3>
+      <div class="form-control">
+        <input type="text" name="name" class="task-input" />
+        <button class="btn submit-btn" type="submit">Add</button>
+      </div>
+    </form>
+    <section class="tasks-container">
+      <div class="tasks">
+        <div class="single-task">
+          <h5>
+            <span><i class="far fa-check-circle"></i></span>TodoTask
+          </h5>
+          <div class="task-links">
+            <a href="#" class="edit-link">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <button href="#" class="delete-btn">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
